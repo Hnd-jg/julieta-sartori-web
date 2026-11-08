@@ -1,6 +1,6 @@
 # Julieta Sartori · Artista y Productora de eventos
 
-Landing page estática de Julieta Sartori, cantante, compositora y productora de eventos en Buenos Aires.
+Landing page estática de Julieta Sartori, cantante, compositora y intérprete, multiinstrumentista y productora de eventos.
 
 ## Estructura
 - `index.html`: contenido de la página.
