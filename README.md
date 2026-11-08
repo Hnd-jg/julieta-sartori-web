@@ -11,4 +11,4 @@ Landing page estática de Julieta Sartori, cantante, compositora y productora de
 - `video-artista.mp4`, `video-productora.mp4`: loops de la portada.
 
 ## Publicar en Netlify
-Conectar este repositorio en Netlify (Add new project → Import from Git). No requiere build: el directorio de publicación es la raíz.
+Publicado en https://julietasartori.netlify.app (Netlify conectado a este repositorio: cada push a main se publica solo). No requiere build: el directorio de publicación es la raíz.
