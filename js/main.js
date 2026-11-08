@@ -171,17 +171,19 @@
       .to('.hero-mark small', { opacity: 0, ease: 'none' }, 0)
       .to('.hero-inner', { scale: 0.86, borderRadius: 28, ease: 'none' }, 0);
 
-    // galería horizontal fijada
-    var track = document.querySelector('.hscroll-track');
-    var dist = function () { return track.scrollWidth - window.innerWidth; };
-    gsap.to(track, {
-      x: function () { return -dist(); }, ease: 'none',
-      scrollTrigger: { trigger: '.hscroll', start: 'top top', end: function () { return '+=' + dist(); }, pin: true, scrub: 1, invalidateOnRefresh: true }
+    // galerías horizontales fijadas (artista y producción)
+    gsap.utils.toArray('.hscroll').forEach(function (sec) {
+      var track = sec.querySelector('.hscroll-track');
+      var dist = function () { return Math.max(0, track.scrollWidth - window.innerWidth); };
+      gsap.to(track, {
+        x: function () { return -dist(); }, ease: 'none',
+        scrollTrigger: { trigger: sec, start: 'top top', end: function () { return '+=' + Math.max(dist(), window.innerHeight * 0.6); }, pin: true, scrub: 1, invalidateOnRefresh: true }
+      });
+      gsap.to(sec.querySelectorAll('.shot img'), { scale: 1, ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: function () { return '+=' + (dist() + window.innerHeight); }, scrub: true } });
     });
-    gsap.to('.shot img', { scale: 1, ease: 'none', scrollTrigger: { trigger: '.hscroll', start: 'top bottom', end: function () { return '+=' + (dist() + window.innerHeight); }, scrub: true } });
 
     // la sección de productora entra como un telón que se abre
-    gsap.fromTo('.productora', { clipPath: 'inset(0% 6% 0% 6% round 32px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none', scrollTrigger: { trigger: '.productora', start: 'top bottom', end: 'top 25%', scrub: true } });
+    gsap.fromTo('.productora:not(.productora--cont)', { clipPath: 'inset(0% 6% 0% 6% round 32px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none', scrollTrigger: { trigger: '.productora:not(.productora--cont)', start: 'top bottom', end: 'top 25%', scrub: true } });
   });
 
   // entrada del nombre al cargar

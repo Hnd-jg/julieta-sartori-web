@@ -123,6 +123,8 @@ h1,h2,h3,p{margin:0}
 
 /* ---------- PRODUCTORA ---------- */
 .productora{background:var(--ink);color:var(--ivory);padding:140px 0 120px;position:relative}
+.productora--cont{padding-top:120px}
+.hscroll--prod{border-top:1px solid var(--line-dark)}
 .productora .eyebrow{color:var(--gold-light)}
 .prod-grid{display:flex;flex-wrap:wrap;gap:72px;align-items:flex-start}
 .prod-grid>div{flex:1 1 460px;min-width:0}
@@ -177,8 +179,8 @@ h1,h2,h3,p{margin:0}
 @media (max-width:760px){
   .wrap{padding:0 22px}
   .nav{padding:16px 22px}
-  .nav .links{gap:18px}
-  .nav .links a:nth-child(2){display:none}
+  .nav .links{gap:14px}
+  .nav a{font-size:10.5px;letter-spacing:.14em}
   .hero-inner{display:block}
   .panel{position:absolute;inset:0;opacity:0;transition:opacity .9s ease}
   .panel.is-active{opacity:1;z-index:1}
@@ -191,6 +193,7 @@ h1,h2,h3,p{margin:0}
   .hero-toggle button{border:0;background:transparent;color:var(--ivory);font:inherit;font-size:11px;letter-spacing:.24em;text-transform:uppercase;padding:12px 18px;border-radius:999px;cursor:pointer;min-height:44px}
   .hero-toggle button[aria-pressed="true"]{background:var(--ivory);color:var(--ink)}
   .artista,.productora{padding:96px 0 88px}
+  .productora--cont{padding-top:72px}
   .portrait{height:520px}
   .num{font-size:40px}
   .timeline,.block{margin-top:88px}
